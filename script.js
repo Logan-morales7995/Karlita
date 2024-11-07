@@ -1,4 +1,6 @@
-document.querySelector('.envelope').addEventListener('click', function() {
-  const flap = document.querySelector('.flap');
-  flap.style.transform = 'rotateX(-180deg)';
-});
+window.onload = function() {
+  const envelope = document.querySelector('.envelope');
+  setTimeout(() => {
+    envelope.classList.add('open');
+  }, 3000);  // Después de 3 segundos, el sobre se abre
+};
