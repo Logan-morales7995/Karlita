@@ -1,0 +1,98 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+}
+
+.background {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(to top, #FFAA85, #B3315F);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.peonies {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://your-image-url/peonies.png');
+  background-size: cover;
+  opacity: 0.5;
+  animation: movePeonies 20s infinite linear;
+}
+
+.sunset {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 30%;
+  background: linear-gradient(to top, #FF6E40, transparent);
+}
+
+@keyframes movePeonies {
+  0% { background-position: 0 0; }
+  100% { background-position: 100vw 100vh; }
+}
+
+.bird {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: flyIn 3s ease-in-out forwards;
+}
+
+.bird-image {
+  width: 50px;
+  height: auto;
+  animation: flap 0.5s infinite;
+}
+
+.envelope {
+  position: relative;
+  width: 80px;
+  height: 50px;
+  background: #FFFFFF;
+  border: 2px solid #B3315F;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.flap {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 50%;
+  background: #FFAA85;
+  transform-origin: top;
+  transition: transform 0.5s;
+}
+
+.envelope:hover .flap {
+  transform: rotateX(-180deg);
+}
+
+.message {
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  text-align: center;
+  font-size: 0.9em;
+  color: #B3315F;
+  transform: translateY(-100%);
+}
+
+@keyframes flyIn {
+  0% { transform: translateY(-200px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes flap {
+  0%, 100% { transform: rotate(0); }
+  50% { transform: rotate(15deg); }
+}
